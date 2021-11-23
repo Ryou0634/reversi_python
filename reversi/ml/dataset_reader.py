@@ -1,5 +1,5 @@
 import glob
-
+import tqdm
 from torch.utils.data import DataLoader
 
 from my_ml.dataset_reader import DatasetReader
@@ -22,7 +22,7 @@ class ReversiDatasetReader(DatasetReader):
 
     def read(self, file_path: str):
         for reversi_data_path in glob.glob(file_path):
-            for game_data in parse_wtb_file(reversi_data_path):
+            for game_data in tqdm.tqdm(parse_wtb_file(reversi_data_path)):
                 try:
                     instances = self._convert_moves(game_data["moves"])
                 except InvalidPositionError:
