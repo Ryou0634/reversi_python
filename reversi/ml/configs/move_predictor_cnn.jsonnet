@@ -6,8 +6,8 @@
             "add_legal_positions": false
         }
     },
-    "train_data_path": "data/othello_data/ffo_wthor/WTH_1977.wtb",
-    "validation_data_path": "data/othello_data/ffo_wthor/WTH_1977.wtb",
+    "train_data_path": "/data/local/li0123/othello_data/ffo_wthor/WTH_2020.wtb",
+    "validation_data_path": "/data/local/li0123/othello_data/ffo_wthor/WTH_2020.wtb",
     "model": {
         "type": "move_predictor",
         "board_encoder": {"type": "reversi_conv", "num_channels": [2, 64, 64, 128, 128]},
