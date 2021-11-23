@@ -8,6 +8,10 @@ from reversi.board import Position, InvalidPositionError
 from .wtb_file_parser import parse_wtb_file
 from .board_feature_extractors import BoardFeatureExtractor
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 def position_to_index(position: Position, size: int):
     return position.x * size + position.y
@@ -22,6 +26,7 @@ class ReversiDatasetReader(DatasetReader):
 
     def read(self, file_path: str):
         for reversi_data_path in glob.glob(file_path):
+            logger.info(f"Reading {reversi_data_path}")
             for game_data in tqdm.tqdm(parse_wtb_file(reversi_data_path)):
                 try:
                     instances = self._convert_moves(game_data["moves"])
