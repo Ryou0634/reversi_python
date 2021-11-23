@@ -1,0 +1,25 @@
+[tool.black]
+line-length = 120
+
+[tool.poetry]
+name = "reversi_python"
+version = "0.1.0"
+description = ""
+authors = ["linghan <ryou0634@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+numpy = "^1.21.4"
+torch = "^1.10.0"
+pytest = "^6.2.5"
+click = "^8.0.3"
+jupyter = {version = "^1.0.0", optional = true}
+jsonnet = "^0.17.0"
+tqdm = "^4.62.3"
+
+[tool.poetry.extras]
+dev = ["jupyter"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

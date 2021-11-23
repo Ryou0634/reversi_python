@@ -1,0 +1,1 @@
+{"type": "min_max", "min_max_search": {"node_evaluator": {"type": "reversi_manual"}, "max_time": 0.01}}
