@@ -6,7 +6,7 @@
             "add_legal_positions": false
         }
     },
-    "train_data_path": "/data/local/li0123/othello_data/WTH_*.wtb",
+    "train_data_path": "/data/local/li0123/othello_data/train/WTH_*.wtb",
     "validation_data_path": "/data/local/li0123/othello_data/validation/*.wtb",
     "model": {
         "type": "move_predictor",
