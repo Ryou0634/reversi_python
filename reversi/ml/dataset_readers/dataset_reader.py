@@ -5,16 +5,21 @@ from torch.utils.data import DataLoader
 from my_ml.dataset_reader import DatasetReader
 from reversi.game_engine import ReversiGameEngine
 from reversi.board import Position, InvalidPositionError
-from .wtb_file_parser import parse_wtb_file
-from .board_feature_extractors import BoardFeatureExtractor
+from reversi.ml.dataset_readers.wtb_file_parser import parse_wtb_file
+from reversi.ml.board_feature_extractors import BoardFeatureExtractor
 
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-def position_to_index(position: Position, size: int):
+def position_to_index(position: Position, size: int) -> int:
     return position.x * size + position.y
+
+
+def index_to_position(index: int, size: int) -> Position:
+    x, y = divmod(index, size)
+    return Position(x, y)
 
 
 @DatasetReader.register("reversi_move_prediction")
