@@ -27,6 +27,7 @@ def load_player(player_signature: str, color: Color) -> Player:
 @click.option("--interface-type", type=str, default="cui")
 def play(black_player: str, white_player: str, board_type: str, interface_type: str):
     import_submodules("reversi")
+    import_submodules("search_algorithm")
     import_submodules("my_ml")
 
     game = GameInterface.by_name(interface_type)(

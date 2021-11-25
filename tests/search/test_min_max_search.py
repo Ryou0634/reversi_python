@@ -1,10 +1,10 @@
 from typing import List
 import pytest
 
-from search_algorithm.min_max_search import MinMaxSearchNode, SearchNodeEvaluator, MinMaxSearch
+from search_algorithm.min_max_search import TreeNode, NodeEvaluator, MinMaxSearch
 
 
-class FakeSearchNode(MinMaxSearchNode):
+class FakeSearchNode(TreeNode):
     def __init__(self, state_value: int, is_opponent_turn: bool):
         self.state_value = state_value
         self._is_opponent_turn = is_opponent_turn
@@ -24,7 +24,7 @@ class FakeSearchNode(MinMaxSearchNode):
         return self.state_value == 3
 
 
-class FakeSearchNodeEvaluator(SearchNodeEvaluator):
+class FakeSearchNodeEvaluator(NodeEvaluator):
     def evaluate(self, node: FakeSearchNode):
         return node.state_value
 

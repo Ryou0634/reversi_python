@@ -1,0 +1,4 @@
+{
+    "type": "search",
+    "search_algorithm": {"type": "min_max", "node_evaluator": {"type": "reversi_manual"}, "max_time": 0.01}
+}

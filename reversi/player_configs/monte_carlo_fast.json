@@ -1,0 +1,4 @@
+{
+    "type": "search",
+    "search_algorithm": {"type": "monte_carlo", "node_evaluator": {"type": "reversi_win_lose"}, "max_time": 0.01}
+}
